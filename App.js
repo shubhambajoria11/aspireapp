@@ -1,20 +1,39 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StatusBar } from "expo-status-bar";
+import { StyleSheet, Text, View } from "react-native";
+import MainTabNavigator from "./src/navigation/MainTabNavigator";
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+  return <MainTabNavigator />;
 }
 
 const styles = StyleSheet.create({
-  container: {
+  app: {
+    backgroundColor: "#0C365A",
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+  },
+  logo: {
+    height: 80,
+  },
+  header: {
+    color: "white",
+    fontSize: 50,
+  },
+  title: {
+    fontWeight: "bold",
+    fontSize: "1.5rem",
+    marginVertical: "1em",
+    textAlign: "center",
+  },
+  text: {
+    lineHeight: "1.5em",
+    fontSize: "1.125rem",
+    marginVertical: "1em",
+    textAlign: "center",
+  },
+  link: {
+    color: "#1B95E0",
+  },
+  code: {
+    fontFamily: "monospace, monospace",
   },
 });
