@@ -1,25 +1,17 @@
 import {
   View,
   Text,
-  StyleSheet,
   ScrollView,
-  Button,
-  Animated,
   TouchableOpacity,
-  Dimensions,
   useWindowDimensions,
 } from "react-native";
 import React, { useRef, useState } from "react";
 import GlobalStyles, {
-  AVAILABLE_BALANCE,
   AVL_BAL_SYMBOL,
-  DEBIT_CARD,
-  DIGIT_5000,
   SPENDING_LIMIT,
 } from "../../constants/GlobalConstants";
 import { LocalScreenStyles } from "../constants";
-import WhiteSubView from "../../components/WhiteSubView";
-import CreditCard from "../../components/CreditCard";
+
 import IconText from "../../components/IconText";
 import { TextInput } from "react-native-gesture-handler";
 import ButtonAmount from "../../components/ButtonAmount";

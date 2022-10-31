@@ -1,8 +1,9 @@
 import { View, Text, Image } from "react-native";
-import React from "react";
+import React, { useState } from "react";
 import { TouchableOpacity } from "react-native-gesture-handler";
 
 const CreditCard = () => {
+  const [showDetails, setShowDetails] = useState(true);
   return (
     <View style={{ marginTop: -80 }}>
       <TouchableOpacity
@@ -16,9 +17,19 @@ const CreditCard = () => {
           justifyContent: "flex-end",
           alignItems: "center",
         }}
+        onPress={() => setShowDetails(!showDetails)}
       >
-        <Image source={require("../assets/hide.png")} />
-        <Text style={{ fontSize: 12, paddingRight: 5 }}>Hide Card Details</Text>
+        <Image
+          source={
+            showDetails
+              ? require("../assets/hide.png")
+              : require("../assets/openEye.png")
+          }
+          style={{ width: 15, height: 15 }}
+        />
+        <Text style={{ fontSize: 12, paddingRight: 5, paddingLeft: 5 }}>
+          {showDetails ? "Hide Card Details" : "Show Card Details"}
+        </Text>
       </TouchableOpacity>
       <View
         style={{
@@ -51,12 +62,16 @@ const CreditCard = () => {
             marginTop: 20,
           }}
         >
-          4028 2584 5488 4545
+          {showDetails ? "4028 2584 5488 4545" : "**** **** **** ****"}
         </Text>
 
         <View style={{ flexDirection: "row", marginLeft: 30, marginTop: 5 }}>
-          <Text style={{ color: "white" }}>Thru: 12/20</Text>
-          <Text style={{ color: "white", paddingLeft: 30 }}>CVV:456</Text>
+          <Text style={{ color: "white" }}>
+            {showDetails ? "Thru: 12/20" : "Thru: **/**"}
+          </Text>
+          <Text style={{ color: "white", paddingLeft: 30 }}>
+            {showDetails ? "CVV:456" : "CVV:***"}
+          </Text>
         </View>
         <Image
           style={{ alignSelf: "flex-end", margin: 30 }}
