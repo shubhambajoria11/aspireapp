@@ -1,8 +1,11 @@
 import { View, Text } from "react-native";
-import React from "react";
+import React, { useState } from "react";
 import IconTextToggle from "./IconTextToggle";
+import { useNavigation } from "@react-navigation/native";
 
 const WhiteSubView = () => {
+  const [switchVal, setSwitchVal] = useState(false);
+  const navigation = useNavigation();
   return (
     <View>
       <IconTextToggle
@@ -14,6 +17,14 @@ const WhiteSubView = () => {
         headingProp="Weekly Spending Limit"
         subHeadingProp="You haven't set any spending limit on card"
         imageFileNameProp="topUp.png"
+        onPressProp={() => {
+          setSwitchVal((preVal) => !preVal);
+          if (!switchVal) {
+            //TODO: Navigation
+            navigation.navigate("Spending Limit");
+          }
+        }}
+        switchValProp={switchVal}
       />
       <IconTextToggle
         headingProp="Freeze Card"

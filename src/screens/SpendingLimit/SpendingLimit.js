@@ -15,10 +15,12 @@ import { LocalScreenStyles } from "../constants";
 import IconText from "../../components/IconText";
 import { TextInput } from "react-native-gesture-handler";
 import ButtonAmount from "../../components/ButtonAmount";
+import { useNavigation } from "@react-navigation/native";
 
 const SpendingLimit = () => {
   const { width, height } = useWindowDimensions();
   const [amount, setAmount] = useState(0);
+  const navigation = useNavigation();
   return (
     <View style={LocalScreenStyles.app}>
       <ScrollView>
@@ -90,6 +92,9 @@ const SpendingLimit = () => {
                 justifyContent: "center",
                 alignSelf: "center",
                 borderRadius: 40,
+              }}
+              onPress={() => {
+                navigation.navigate("Dashboard");
               }}
             >
               <Text style={{ color: "white", fontWeight: "bold" }}>Save</Text>
