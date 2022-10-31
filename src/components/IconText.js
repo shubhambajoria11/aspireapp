@@ -8,14 +8,14 @@ const IconTextToggle = ({ headingProp, subHeadingProp, imageFileNameProp }) => {
       <View
         style={{
           flexDirection: "row",
-          alignItems: "center",
+          // alignItems: "center",
           paddingLeft: "5%",
           marginTop: 25,
         }}
       >
         <Image
           style={{ width: 25, height: 25 }}
-          source={require("../assets/topUp.png")}
+          source={require("../assets/indicator.png")}
         />
         <View style={{ paddingLeft: 20, width: "75%" }}>
           <Text>{headingProp}</Text>
@@ -28,15 +28,7 @@ const IconTextToggle = ({ headingProp, subHeadingProp, imageFileNameProp }) => {
             justifyContent: "center",
             marginHorizontal: 20,
           }}
-        >
-          <Switch
-            rackColor={{ false: "#767577", true: "#81b0ff" }}
-            thumbColor={switchVal ? "#fff" : "#f4f3f4"}
-            onValueChange={() => setSwitchVal((preVal) => !preVal)}
-            value={switchVal}
-            style={{ transform: [{ scaleX: 0.5 }, { scaleY: 0.5 }] }}
-          />
-        </View>
+        ></View>
       </View>
     </View>
   );

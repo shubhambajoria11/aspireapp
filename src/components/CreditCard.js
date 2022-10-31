@@ -33,7 +33,14 @@ const CreditCard = () => {
           style={{ alignSelf: "flex-end", margin: 30 }}
           source={require("../assets/aspireLogo.png")}
         />
-        <Text style={{ marginLeft: 30, color: "white", fontWeight: "900" }}>
+        <Text
+          style={{
+            marginLeft: 30,
+            color: "white",
+            fontWeight: "900",
+            fontSize: 18,
+          }}
+        >
           Mark Henry
         </Text>
         <Text

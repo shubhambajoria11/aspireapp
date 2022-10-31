@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-export const LocalDashboardStyles = StyleSheet.create({
+export const LocalScreenStyles = StyleSheet.create({
   app: {
     backgroundColor: "#0C365A",
     flex: 1,
@@ -23,7 +23,7 @@ export const LocalDashboardStyles = StyleSheet.create({
   textBalAmountSymbol: {
     width: 30,
     height: 20,
-    backgroundColor: "green",
+    backgroundColor: "#38D167",
     alignItems: "center",
     marginLeft: 20,
   },
@@ -35,10 +35,17 @@ export const LocalDashboardStyles = StyleSheet.create({
     marginLeft: 15,
     color: "white",
     fontSize: 25,
+    fontWeight: "bold",
   },
   subContainerWhite: {
     backgroundColor: "white",
     marginTop: 150,
+    borderTopLeftRadius: 20,
+    borderTopRightRadius: 20,
+  },
+  subContainerWhiteSpending: {
+    backgroundColor: "white",
+    marginTop: 50,
     borderTopLeftRadius: 20,
     borderTopRightRadius: 20,
   },

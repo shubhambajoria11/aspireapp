@@ -16,30 +16,26 @@ import GlobalStyles, {
   DEBIT_CARD,
   DIGIT_5000,
 } from "../../constants/GlobalConstants";
-import { LocalDashboardStyles } from "./constants";
+import { LocalScreenStyles } from "../constants";
 import WhiteSubView from "../../components/WhiteSubView";
 import CreditCard from "../../components/CreditCard";
 
 const Dashboard = () => {
   const { width, height } = useWindowDimensions();
   return (
-    <View style={LocalDashboardStyles.app}>
+    <View style={LocalScreenStyles.app}>
       <ScrollView>
         <View>
-          <Text style={LocalDashboardStyles.header}>{DEBIT_CARD}</Text>
-          <Text style={LocalDashboardStyles.textAvlBal}>
-            {AVAILABLE_BALANCE}
-          </Text>
-          <View style={LocalDashboardStyles.subContainerBalAmount}>
-            <View style={LocalDashboardStyles.textBalAmountSymbol}>
+          <Text style={LocalScreenStyles.header}>{DEBIT_CARD}</Text>
+          <Text style={LocalScreenStyles.textAvlBal}>{AVAILABLE_BALANCE}</Text>
+          <View style={LocalScreenStyles.subContainerBalAmount}>
+            <View style={LocalScreenStyles.textBalAmountSymbol}>
               <Text>{AVL_BAL_SYMBOL}</Text>
             </View>
-            <Text style={LocalDashboardStyles.textBalAmount}>{DIGIT_5000}</Text>
+            <Text style={LocalScreenStyles.textBalAmount}>{DIGIT_5000}</Text>
           </View>
         </View>
-        <View
-          style={[LocalDashboardStyles.subContainerWhite, { height: height }]}
-        >
+        <View style={[LocalScreenStyles.subContainerWhite, { height: height }]}>
           <CreditCard />
           <WhiteSubView />
         </View>
