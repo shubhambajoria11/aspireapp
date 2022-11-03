@@ -1,9 +1,14 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
 import MainTabNavigator from "./src/navigation/MainTabNavigator";
-
+import { Provider } from "react-redux";
+import { StoreHub } from "./src/redux/store/Storehub";
 export default function App() {
-  return <MainTabNavigator />;
+  return (
+    <Provider store={StoreHub}>
+      <MainTabNavigator />
+    </Provider>
+  );
 }
 
 const styles = StyleSheet.create({
